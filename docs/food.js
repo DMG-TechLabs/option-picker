@@ -37,7 +37,7 @@ const food = [
     },
     {
         name: "Crepes",
-        img: "https://sundaysuppermovement.com/wp-content/uploads/2017/03/strawberry-crepes-recipe-hero.jpg"
+        img: "https://10play.com.au/ip/s3/2022/06/03/e6e4a3dcdd9b36cb47aa5af2ade3be89-1153586.jpg?image-profile=image_max&io=landscape"
     },
     {
         name: "Falafel",
