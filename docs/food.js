@@ -30,5 +30,21 @@ const food = [
     {
         name: "Kebab",
         img: "https://cdn.pixabay.com/photo/2021/03/24/08/49/durum-6119590__480.jpg"
+    },
+    {
+        name: "Pancakes",
+        img: "https://cdn.pixabay.com/photo/2023/02/24/21/11/pancake-7811889__480.jpg"
+    },
+    {
+        name: "Crepes",
+        img: "https://cdn.pixabay.com/photo/2019/02/03/16/44/hot-3972978__480.jpg"
+    },
+    {
+        name: "Falafel",
+        img: "https://toriavey.com/images/2011/01/TOA109_18-1200x900.jpeg"
+    },
+    {
+        name: "Salad",
+        img: "https://cdn.pixabay.com/photo/2015/05/31/12/58/spinach-791629_1280.jpg"
     }
 ];
