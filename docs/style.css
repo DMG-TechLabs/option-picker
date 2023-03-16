@@ -86,7 +86,11 @@ body{
 
 @media (max-width: 600px){
     .choice { 
-        width: 8em;
+        width: 10em;
+    }
+
+    .choices-container{
+        width: 90%;
     }
 }
 
