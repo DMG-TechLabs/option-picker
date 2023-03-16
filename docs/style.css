@@ -1,0 +1,97 @@
+*{
+    --white: #f6f4f3;
+    --red: #f03a47;
+    --blue: #276fbf;
+    --choice-bg: red;
+
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title{
+    font-size: 4.5vw;
+}
+
+.choices-container{
+    margin-top: 3em;
+    width: 70%;
+    display: flex;
+    justify-content:space-around;
+}
+
+.choice{
+    border-radius: 10px;
+    padding: 1em;
+    color: white;
+    width: 20em;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    background-color: var(--blue);
+}
+
+.choice:hover{
+    cursor: pointer;
+    scale: 110%;
+}
+
+#first {
+    background-color: var(--blue);
+}
+
+#second {
+    background-color: var(--red);
+}
+
+.image{
+    border-radius: 5px;
+    width: 100%;
+}
+
+.food-name{
+    font-size: 4vw;
+}
+
+.return{
+    margin-top: 3em;
+    width: 5em;
+    aspect-ratio: 4 / 2;    
+    background-color: var(--red);
+    place-items: center;
+    text-decoration: none;
+    color: white;
+    border-radius: 2.5em;
+    display: none;
+}
+
+.return:hover{
+    cursor: pointer;
+    scale: 110%;
+}
+
+@media (max-width: 600px){
+    .choice { 
+        width: 8em;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 800px){
+    .choice { 
+        width: 15em;
+    }
+}
