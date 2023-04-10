@@ -50,6 +50,22 @@ body{
     scale: 110%;
 }
 
+.choice-won{
+    border-radius: 10px;
+    padding: 1em;
+    color: white;
+    width: 20em;
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    background-color: var(--blue);
+}
+
+.choice-won:hover{
+    cursor: pointer;
+    scale: 110%;
+}
+
 #first {
     background-color: var(--blue);
 }
@@ -64,7 +80,7 @@ body{
 }
 
 .food-name{
-    font-size: 4vw;
+    font-size: 3.2vw;
 }
 
 .return{
