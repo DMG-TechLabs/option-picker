@@ -47,7 +47,7 @@ const chooseMe = (e) => {
             won.style.scale = "100%"
         }
 
-        title.innerHTML = "She wants to eat " + wonOption;
+        title.innerHTML = "Your option: " + wonOption;
         returnButton.style.display = "grid";
         
         return;
