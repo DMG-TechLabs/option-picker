@@ -33,15 +33,15 @@ function loadOption(obj, choice) {
 const chooseMe = (e) => {
     clicks++;
     let wonOption;
-    if(clicks >= option.length - 1){
+    if(clicks >= options.length - 1){
         if(e.target.id == "first"){
-            wonOption = firstFood;
+            wonOption = firstOption;
         } else {
-            wonOption = secondFood;
+            wonOption = secondOption;
         }
 
         clearElement(container);
-        loadOption(option[getIndex(wonFood)], won);
+        loadOption(options[getIndex(wonOption)], won);
         won.style.display = "grid";
         won.onmouseover = e => {
             won.style.scale = "100%"
@@ -61,11 +61,11 @@ const chooseMe = (e) => {
         while (
             burnt.includes(indexToLoad) ||
             indexToLoad == getIndex(firstOption) || 
-            option[indexToLoad] == secondOption
+            options[indexToLoad] == secondOption
         ) {
             indexToLoad = randomIndex();
         }
-        const optionToLoad = food[indexToLoad];
+        const optionToLoad = options[indexToLoad];
 
         
         clearElement(second);
@@ -78,11 +78,11 @@ const chooseMe = (e) => {
         while (
             burnt.includes(indexToLoad) ||
             indexToLoad == getIndex(secondOption) ||
-            option[indexToLoad] == secondOption
+            options[indexToLoad] == secondOption
         ) {
             indexToLoad = randomIndex();
         }
-        const optionToLoad = food[indexToLoad];
+        const optionToLoad = options[indexToLoad];
 
         
         clearElement(first);
@@ -102,22 +102,22 @@ function clearElement(element) {
 }
 
 function getIndex(name) {
-    for (let index = 0; index < option.length; index++) {
-        if (name == option[index].name) return index;
+    for (let index = 0; index < options.length; index++) {
+        if (name == options[index].name) return index;
     }
     return -1;
 }
 
 function start() {
-    console.log(option);
+    console.log(options);
 
     const indexes = randomIndexes();
     console.log(indexes);
 
-    loadOption(option[indexes[0]], first);
-    firstOption = option[indexes[0]].name;
-    loadOption(option[indexes[1]], second);
-    secondOption = option[indexes[1]].name;
+    loadOption(options[indexes[0]], first);
+    firstOption = options[indexes[0]].name;
+    loadOption(options[indexes[1]], second);
+    secondOption = options[indexes[1]].name;
 }
 
 function randomIndexes() {
@@ -132,5 +132,5 @@ function randomIndexes() {
 }
 
 function randomIndex() {
-    return Math.floor(Math.random() * option.length);
+    return Math.floor(Math.random() * options.length);
 }
