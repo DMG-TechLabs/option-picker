@@ -1,5 +1,7 @@
-# What Does My Girlfriend Want To Eat?
+# option-picker
 
-A website that helps you find out what your girlfriend wants to eat
+A website that helps you single out your favourite option
 
-![eat](https://user-images.githubusercontent.com/63654361/225773075-dda921bc-c05e-435b-bad8-3fe9031ceb83.png)
+## LICENSE
+
+[MIT](./LICENSE)
