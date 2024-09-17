@@ -7,20 +7,20 @@ const returnButton = document.getElementById("return");
 
 const choices = document.getElementsByClassName("choice");
 
-let firstFood;
-let secondFood;
+let firstOption;
+let secondOption;
 let clicks = 0;
 
-let burnt = [];
+const burnt = [];
 
-function loadFood(obj, choice) {
-    let image = document.createElement("img");
-    let name = document.createElement("p");
+function loadOption(obj, choice) {
+    const image = document.createElement("img");
+    const name = document.createElement("p");
 
     image.classList.add("image");
     image.id = choice.id;
 
-    name.classList.add("food-name");
+    name.classList.add("option-name");
     name.id = choice.id;
 
     image.src = obj.img;
@@ -32,22 +32,22 @@ function loadFood(obj, choice) {
 
 const chooseMe = (e) => {
     clicks++;
-    let wonFood;
-    if(clicks >= food.length - 1){
+    let wonOption;
+    if(clicks >= option.length - 1){
         if(e.target.id == "first"){
-            wonFood = firstFood;
+            wonOption = firstFood;
         } else {
-            wonFood = secondFood;
+            wonOption = secondFood;
         }
 
         clearElement(container);
-        loadFood(food[getIndex(wonFood)], won);
+        loadOption(option[getIndex(wonFood)], won);
         won.style.display = "grid";
         won.onmouseover = e => {
             won.style.scale = "100%"
         }
 
-        title.innerHTML = "She wants to eat " + wonFood;
+        title.innerHTML = "She wants to eat " + wonOption;
         returnButton.style.display = "grid";
         
         return;
@@ -55,45 +55,45 @@ const chooseMe = (e) => {
 
 
     if (e.target.id == "first") {
-        burnt.push(getIndex(secondFood));
+        burnt.push(getIndex(secondOption));
 
         let indexToLoad = randomIndex();
         while (
             burnt.includes(indexToLoad) ||
-            indexToLoad == getIndex(firstFood) || 
-            food[indexToLoad] == secondFood
+            indexToLoad == getIndex(firstOption) || 
+            option[indexToLoad] == secondOption
         ) {
             indexToLoad = randomIndex();
         }
-        let foodToLoad = food[indexToLoad];
+        const optionToLoad = food[indexToLoad];
 
         
         clearElement(second);
-        loadFood(foodToLoad, second);
-        secondFood = foodToLoad.name;
+        loadOption(optionToLoad, second);
+        secondOption = optionToLoad.name;
     } else if (e.target.id == "second") {
-        burnt.push(getIndex(firstFood));
+        burnt.push(getIndex(firstOption));
 
         let indexToLoad = randomIndex();
         while (
             burnt.includes(indexToLoad) ||
-            indexToLoad == getIndex(secondFood) ||
-            food[indexToLoad] == secondFood
+            indexToLoad == getIndex(secondOption) ||
+            option[indexToLoad] == secondOption
         ) {
             indexToLoad = randomIndex();
         }
-        let foodToLoad = food[indexToLoad];
+        const optionToLoad = food[indexToLoad];
 
         
         clearElement(first);
-        loadFood(foodToLoad, first);
-        firstFood = foodToLoad.name;
+        loadOption(optionToLoad, first);
+        firstOption = optionToLoad.name;
     }
 
     console.log("Burnt: " + burnt);
 };
 
-for (let choice of choices) {
+for (const choice of choices) {
     choice.addEventListener("click", chooseMe);
 }
 
@@ -102,26 +102,26 @@ function clearElement(element) {
 }
 
 function getIndex(name) {
-    for (let index = 0; index < food.length; index++) {
-        if (name == food[index].name) return index;
+    for (let index = 0; index < option.length; index++) {
+        if (name == option[index].name) return index;
     }
     return -1;
 }
 
 function start() {
-    console.log(food);
+    console.log(option);
 
-    let indexes = randomIndexes();
+    const indexes = randomIndexes();
     console.log(indexes);
 
-    loadFood(food[indexes[0]], first);
-    firstFood = food[indexes[0]].name;
-    loadFood(food[indexes[1]], second);
-    secondFood = food[indexes[1]].name;
+    loadOption(option[indexes[0]], first);
+    firstOption = option[indexes[0]].name;
+    loadOption(option[indexes[1]], second);
+    secondOption = option[indexes[1]].name;
 }
 
 function randomIndexes() {
-    let firstIndex = randomIndex();
+    const firstIndex = randomIndex();
     let secondIndex = randomIndex();
 
     while (secondIndex == firstIndex) {
@@ -132,5 +132,5 @@ function randomIndexes() {
 }
 
 function randomIndex() {
-    return Math.floor(Math.random() * food.length);
+    return Math.floor(Math.random() * option.length);
 }
